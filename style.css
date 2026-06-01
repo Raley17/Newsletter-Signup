@@ -36,52 +36,69 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   border-radius: 0.5em;
+  background-image: none;
+  transition: 1s ease all;
 }
 
-main {
-  form {
-    position: relative;
-    z-index: 1;
-    h1 {
-      color: var(--color-2);
-      margin: 0em 0em 0.5em 1em;
-    }
-    p {
-      color: var(--color-2);
-      margin: 0em 1em 1em 2em;
-    }
+.buttons:hover {
+  background-image: linear-gradient(
+    to right,
+    #ff5477,
+    #ff5769,
+    #ff5c5b,
+    #ff624d,
+    #ff693e
+  );
+}
 
-    label {
-      font-size: 0.75em;
-      font-weight: 700;
-      color: var(--color-2);
-      margin-left: 3em;
-    }
+form {
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-5);
+  h1 {
+    color: var(--color-2);
+    margin: 0em 0em 0.5em 1em;
+  }
+  p {
+    color: var(--color-2);
+    margin: 0em 1em 1em 2em;
+  }
 
-    input[type="email"] {
-      width: 80%;
-      height: 4em;
-      border-radius: 0.75em;
-      outline: none;
-      border: 1px solid var(--color-4);
-      margin-top: 0.5em;
-      margin-left: 2.5em;
-      margin-bottom: 1.5em;
-      padding: 1em 2em;
-      font-family: "Roboto", sans-serif;
-      font-size: 0.875em;
-      color: var(--color-4);
-    }
+  label {
+    font-size: 0.75em;
+    font-weight: 700;
+    color: var(--color-2);
+    margin-left: 3em;
+  }
+
+  input[type="email"] {
+    width: 80%;
+    height: 4em;
+    border-radius: 0.75em;
+    outline: none;
+    border: 1px solid var(--color-4);
+    margin-top: 0.5em;
+    margin-left: 2.5em;
+    margin-bottom: 1.5em;
+    padding: 1em 2em;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875em;
+    color: var(--color-4);
   }
 }
 
 ul {
-  list-style: url(./assets/images/icon-list.svg);
-  margin: 0em 1em 0em 3.75em;
+  margin: 0em 1em 0em 1.75em;
   line-height: 1.5em;
   li {
     color: var(--color-2);
     margin-bottom: 0.5em;
+    display: flex;
+    align-items: start;
+  }
+  li::before {
+    content: url(./assets/images/icon-list.svg);
+    margin-right: 1em;
   }
   li:last-child {
     margin-bottom: 2em;
@@ -89,8 +106,8 @@ ul {
 }
 
 article {
-  opacity: 0;
-  z-index: 2;
+  opacity: 1;
+  z-index: -2;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -137,5 +154,76 @@ footer {
   a {
     color: var(--color-2);
     text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .banner {
+    margin: -1rem;
+    width: 25vw;
+    height: auto;
+    background-image: url(./assets/images/illustration-sign-up-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 82.5%;
+  }
+
+  .buttons {
+    width: 80%;
+  }
+
+  body {
+    background-color: var(--color-3);
+    height: 95vh;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    width: 45vw;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 2rem;
+    box-shadow:
+      rgba(0, 0, 0, 0.09) 0px 54px 55px,
+      rgba(0, 0, 0, 0.09) 0px -12px 30px,
+      rgba(0, 0, 0, 0.09) 0px 4px 6px,
+      rgba(0, 0, 0, 0.09) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    h1 {
+      font-size: 3.5rem;
+      margin-left: 2rem;
+    }
+
+    p {
+      padding-right: 0.75rem;
+      line-height: 1.5rem;
+    }
+
+    input[type="email"] {
+      width: 80%;
+    }
+  }
+
+  .down {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+
+    padding: 5rem 1rem;
+  }
+
+  footer {
+    margin-top: 2rem;
+    color: var(--color-5);
+    font-weight: 700;
+    font-size: 1rem;
+    a {
+      color: var(--color-5);
+    }
   }
 }
