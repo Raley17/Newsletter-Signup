@@ -20,7 +20,7 @@ function hideForm() {
 dismissButton.addEventListener("click", hideForm);
 
 submitButton.addEventListener("click", function () {
-  if (!emailInput.validity.valid) {
+  if (!emailInput.validity.valid || emailInput.value.trim() === "") {
     emailInput.classList.add("erroremail");
     errorMsg.style.opacity = "1";
   } else {
