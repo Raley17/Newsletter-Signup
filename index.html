@@ -25,7 +25,7 @@
     <main>
       <form action="">
         <div class="banner"></div>
-        <div class="down">
+        <div class="downform">
           <h1>Stay updated!</h1>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
           <ul>
@@ -33,36 +33,50 @@
             <li>Measuring to ensure updates area success</li>
             <li>And much more!</li>
           </ul>
-          <label for="emailinput">Email address</label>
+
+          <div class="labels">
+            <label for="emailinput">Email address</label>
+            <label for="emailinput" class="invalidlabel" id="errorLabel"
+              >Valid email required</label
+            >
+          </div>
           <input
             type="email"
             autocomplete="email"
             name="Email"
-            id="emailinput"
+            id="emailInput"
             placeholder="email@company.com"
           />
           <input
             type="submit"
             value="Subscribe to monthly newsletter"
             class="buttons"
+            id="submitButton"
           />
         </div>
       </form>
 
-      <article>
-        <section class="up">
-          <img src="./assets/images/icon-success.svg" alt="" />
-          <h2>Thanks for subscribing!</h2>
-          <p>
-            A confirmation email has been sent to
-            <span>ash@loremcompany.com</span>. Please open it and click the
-            button inside to confirm your subscription
-          </p>
-        </section>
-        <section class="down">
-          <input type="button" value="Dismiss message" class="buttons" />
-        </section>
-      </article>
+      <div class="centering">
+        <article>
+          <section class="up">
+            <img src="./assets/images/icon-success.svg" alt="" />
+            <h2>Thanks for subscribing!</h2>
+            <p>
+              A confirmation email has been sent to
+              <span>ash@loremcompany.com</span>. Please open it and click the
+              button inside to confirm your subscription
+            </p>
+          </section>
+          <section class="down">
+            <input
+              type="button"
+              value="Dismiss message"
+              class="buttons"
+              id="dismissButton"
+            />
+          </section>
+        </article>
+      </div>
     </main>
 
     <footer class="attribution">

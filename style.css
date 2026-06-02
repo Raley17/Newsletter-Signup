@@ -4,6 +4,7 @@
   --color-3: hsl(235, 18%, 26%);
   --color-4: hsl(0, 0%, 58%);
   --color-5: hsl(0, 0%, 100%);
+  --color-6: hsla(4, 100%, 67%, 0.5);
 }
 
 * {
@@ -51,10 +52,27 @@ body {
   );
 }
 
+.invalidlabel {
+  color: var(--color-1);
+  opacity: 0;
+}
+
+.labels {
+  display: flex;
+  gap: 7rem;
+}
+
+.erroremail {
+  background-color: var(--color-6);
+  color: var(--color-6);
+}
+
 form {
   position: relative;
   z-index: 1;
   background-color: var(--color-5);
+  opacity: 1;
+  transition: opacity 0.3s ease;
   h1 {
     color: var(--color-2);
     margin: 0em 0em 0.5em 1em;
@@ -106,7 +124,7 @@ ul {
 }
 
 article {
-  opacity: 1;
+  opacity: 0;
   z-index: -2;
   position: absolute;
   width: 100vw;
@@ -116,6 +134,7 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: opacity 0.3s ease;
 
   .up {
     margin-top: 8em;
@@ -182,6 +201,10 @@ footer {
     align-items: center;
   }
 
+  main {
+    position: relative;
+  }
+
   form {
     width: 45vw;
     display: flex;
@@ -209,12 +232,58 @@ footer {
     }
   }
 
-  .down {
+  .downform {
     width: 25vw;
     display: flex;
     flex-direction: column;
 
     padding: 5rem 1rem;
+  }
+
+  article {
+    width: 32rem;
+    height: 36rem;
+    padding: 2.5rem 4rem;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+      rgba(0, 0, 0, 0.09) 0px 54px 55px,
+      rgba(0, 0, 0, 0.09) 0px -12px 30px,
+      rgba(0, 0, 0, 0.09) 0px 4px 6px,
+      rgba(0, 0, 0, 0.09) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    gap: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .up {
+      margin-top: 0rem;
+    }
+
+    img {
+      margin: 0;
+      width: 5rem;
+    }
+
+    h2 {
+      font-size: 4rem;
+      line-height: 4rem;
+      margin: 2rem 0rem 1rem 0rem;
+    }
+
+    p {
+      margin-left: 0rem;
+    }
+    .down {
+      width: 100%;
+    }
+    input[type="button"] {
+      width: 100%;
+      margin: 0rem;
+    }
   }
 
   footer {
